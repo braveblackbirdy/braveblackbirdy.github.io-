@@ -67,7 +67,7 @@
     border-radius:10px;
     text-decoration:none; color:#2e2e2e;
     background:#fafafa;
-    border:1px solid #ececec;
+    /* УБРАНА ГРАНИЦА: border:1px solid #ececec; */
   }
   .contact a small{color:var(--muted);}
 
@@ -81,7 +81,7 @@
     padding:12px;
     border-radius:10px;
     background:#fafafa;
-    border:1px solid #e9e9e9;
+    /* УБРАНА ГРАНИЦА: border:1px solid #e9e9e9; */
   }
   .job .title{font-weight:600; color:#3b3b38}
   .job .meta{font-size:13px; color:var(--muted)}
@@ -91,7 +91,7 @@
     padding:8px 10px;
     background:#ffffff;
     border-radius:999px;
-    border:1px solid #ebeae7;
+    /* УБРАНА ГРАНИЦА: border:1px solid #ebeae7; */
     font-size:13px;
     color:#474742;
   }
@@ -110,47 +110,128 @@
     .card{grid-template-columns:1fr;}
     .right{order:2}
   }
-.profile-photo{width:170x;height:170px;object-fit:cover;border-radius:14px;border:3px solid var(--accent-light);box-shadow:0 4px 16px rgba(0,0,0,0.08);margin-bottom:12px;}
-</style>
+
+  /* Новые стили для основного контента */
+  .main-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  
+  .content-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 32px;
+    box-shadow: 0 8px 30px rgba(40,40,40,0.06);
+    /* УБРАНА ГРАНИЦА: border: 1px solid #f0f0f0; */
+  }
+  
+  .profile-photo{
+    width:170px;
+    height:170px;
+    object-fit:cover;
+    border-radius:14px;
+    /* УБРАНА ГРАНИЦА: border:3px solid var(--accent-light); */
+    box-shadow:0 4px 16px rgba(0,0,0,0.08);
+    margin-bottom:12px;
+  }
+  
+  #about, #skills, #contacts {
+    /* УБРАНЫ ГРАНИЦЫ ВОКРУГ СЕКЦИЙ */
+  }
+  
+  h1.text-4xl {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2a2a28;
+    margin: 0 0 16px 0;
+  }
+  
+  h2.text-2xl {
+    font-size: 18px;
+    font-weight: 600;
+    color: #7365a3;
+    margin: 0 0 12px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  ul.list-disc {
+    padding-left: 20px;
+    margin: 0;
+  }
+  
+  ul.list-disc li {
+    margin-bottom: 6px;
+  }
+  
+  .space-y-12 > * + * {
+    margin-top: 24px;
+  }
+  
+  .space-y-4 > * + * {
+    margin-top: 12px;
+  }
+  
+  .space-y-3 > * + * {
+    margin-top: 10px;
+  }
+  
+  .space-y-2 > * + * {
+    margin-top: 8px;
+  }
+  
+  .leading-relaxed {
+    line-height: 1.6;
+  }
+  
+  .text-lg {
+    font-size: 16px;
+  }
+  
+  .text-gray-700 {
+    color: #4a4a46;
+  }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans">
   <div class="wrap">
     <div class="card" role="region" aria-label="Сайт-визитка Ани">
-      <main class="max-w-3xl mx-auto px-6 py-14">
-    <div class="bg-white shadow-xl rounded-3xl p-10 space-y-12 border border-gray-100">
-      <section id="about" class="space-y-4">
-        <img src="me.jpg" alt="Фото Ани" class="profile-photo">
-        <h1 class="text-4xl font-bold tracking-tight">Привет! Я Аня, 27</h1>
-        <p class="text-gray-700 leading-relaxed text-lg">
-          Джун-тестировщик в поиске классной позиции. Раньше 6+ лет работала автором и аналитиком контента — поэтому у меня очень развита логика, внимание к деталям и умение находить несостыковки. Люблю тщательно проверять ошибки, чтобы всё работало так, как должно.
-        </p>
-        <p class="text-gray-700 leading-relaxed text-lg">
-          Учусь тестированию, делаю тест-планы, чек-листы и тест-кейсы, оформляю баг-репорты. Хочу расти в классной продуктовой команде.
-        </p>
-      </section>
+      <main class="main-content">
+        <div class="content-card">
+          <section id="about">
+            <img src="me.jpg" alt="Фото Ани" class="profile-photo">
+            <h1>Привет! Я Аня, 27</h1>
+            <p class="text-gray-700 leading-relaxed text-lg">
+              Джун-тестировщик в поиске классной позиции. Раньше 6+ лет работала автором и аналитиком контента — поэтому у меня очень развита логика, внимание к деталям и умение находить несостыковки. Люблю тщательно проверять ошибки, чтобы всё работало так, как должно.
+            </p>
+            <p class="text-gray-700 leading-relaxed text-lg">
+              Учусь тестированию, делаю тест-планы, чек-листы и тест-кейсы, оформляю баг-репорты. Хочу расти в классной продуктовой команде.
+            </p>
+          </section>
 
-      <section id="skills" class="space-y-3">
-        <h2 class="text-2xl font-semibold">Навыки</h2>
-        <ul class="list-disc pl-6 text-gray-700 space-y-2 text-lg">
-          <li>Тест-дизайн: чек-листы, тест-кейсы</li>
-          <li>Оформление баг-репортов</li>
-          <li>Postman, Charles, Devtools, MongoDB, MYSQL, Test-it, Jira, Figma</li>
-          <li>Работа с документацией (и без тоже ок!)</li>
-          <li>HTML, CSS </li>
-          <li>Английский C1</li>
-        </ul>
-      </section>
+          <section id="skills">
+            <h2>Навыки</h2>
+            <ul class="list-disc text-gray-700 text-lg">
+              <li>Тест-дизайн: чек-листы, тест-кейсы</li>
+              <li>Оформление баг-репортов</li>
+              <li>Postman, Charles, Devtools, MongoDB, MYSQL, Test-it, Jira, Figma</li>
+              <li>Работа с документацией (и без тоже ок!)</li>
+              <li>HTML, CSS </li>
+              <li>Английский C1</li>
+            </ul>
+          </section>
 
-      <section id="contacts" class="space-y-3">
-        <h2 class="text-2xl font-semibold">Контакты</h2>
-        <ul class="text-gray-700 space-y-2 text-lg">
-          <li>📍 Москва</li>
-          <li>📧 braveblackbirdy@gmail.com</li>
-          <li>🔗 Telegram: @braveblackbirdy</li>
-        </ul>
-      </section>
-    </div>
-  </main>
+          <section id="contacts">
+            <h2>Контакты</h2>
+            <ul class="text-gray-700 text-lg">
+              <li>📍 Москва</li>
+              <li>📧 braveblackbirdy@gmail.com</li>
+              <li>🔗 Telegram: @braveblackbirdy</li>
+            </ul>
+          </section>
+        </div>
+      </main>
 
       <aside class="right">
         <div class="card-aside">
@@ -200,13 +281,11 @@
 
         </div>
       </aside>
-
     </div>
 
     <footer>
       <div>© Аня — джун‑тестировщик • Готова к собеседованиям и тестовым заданиям.</div>
     </footer>
-
   </div>
 </body>
 </html>
