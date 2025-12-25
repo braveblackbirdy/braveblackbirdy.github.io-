@@ -3,376 +3,243 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Аня — Джун-тестировщик | Портфолио</title>
+  <title>Аня — QA Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
   :root {
-    --primary: #667eea;
-    --primary-light: #a5b4fc;
-    --primary-dark: #5a67d8;
-    --bg: #f8fafc;
-    --card: #ffffff;
-    --text: #334155;
-    --text-light: #64748b;
-    --text-muted: #94a3b8;
-    --border: #e2e8f0;
-    --accent: #10b981;
-    --radius-lg: 20px;
-    --radius-md: 12px;
-    --radius-sm: 8px;
-    --shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.03);
-    color-scheme: light;
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --text-light: #666666;
+    --border: #e0e0e0;
+    --accent: #2563eb;
+    --accent-light: #3b82f6;
   }
 
   * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
 
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 16px;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg);
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
 
   .container {
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px 24px;
   }
 
-  .main-card {
-    background: var(--card);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    margin-bottom: 30px;
-    border: 1px solid var(--border);
+  @media (max-width: 640px) {
+    .container {
+      padding: 32px 20px;
+    }
   }
 
+  /* Header */
   .header {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    color: white;
-    padding: 40px 30px 30px;
-    position: relative;
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
   }
 
-  .profile-section {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 25px;
-  }
-
-  .profile-photo-container {
-    position: relative;
-  }
-
-  .profile-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  }
-
-  .profile-badge {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    background: var(--accent);
-    color: white;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 600;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  .profile-info {
-    flex: 1;
-    min-width: 300px;
-  }
-
-  .profile-info h1 {
+  .name {
     font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    line-height: 1.2;
+    font-weight: 400;
+    margin-bottom: 4px;
+    letter-spacing: -0.5px;
   }
 
-  .profile-info .title {
+  .title {
     font-size: 18px;
-    opacity: 0.9;
-    margin-bottom: 15px;
+    color: var(--text-light);
+    font-weight: 400;
+    margin-bottom: 12px;
   }
 
   .location {
+    font-size: 14px;
+    color: var(--text-light);
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background: rgba(255, 255, 255, 0.15);
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 14px;
-    margin-top: 5px;
+    gap: 6px;
   }
 
-  .content-grid {
-    display: grid;
-    grid-template-columns: 1fr 350px;
-    gap: 30px;
-    padding: 40px;
-  }
-
-  @media (max-width: 992px) {
-    .content-grid {
-      grid-template-columns: 1fr;
-      padding: 30px;
-    }
-  }
-
-  @media (max-width: 576px) {
-    .container {
-      padding: 10px;
-    }
-    
-    .content-grid {
-      padding: 20px;
-      gap: 25px;
-    }
-    
-    .header {
-      padding: 30px 20px 25px;
-    }
-    
-    .profile-info h1 {
-      font-size: 26px;
-    }
-  }
-
-  .main-content {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-
+  /* Sections */
   .section {
-    padding: 25px;
-    background: var(--bg);
-    border-radius: var(--radius-md);
-    border: 1px solid var(--border);
-    transition: transform 0.2s ease;
+    margin-bottom: 40px;
   }
 
-  .section:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-sm);
-  }
-
-  .section h2 {
-    font-size: 20px;
-    font-weight: 600;
+  .section-title {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-light);
     margin-bottom: 20px;
-    color: var(--primary-dark);
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
   }
 
-  .section h2::before {
-    content: '';
-    display: block;
-    width: 4px;
-    height: 20px;
-    background: var(--primary);
-    border-radius: 2px;
-  }
-
-  .section p {
-    margin-bottom: 15px;
+  /* About */
+  .about-text {
     color: var(--text);
     line-height: 1.7;
+    margin-bottom: 16px;
   }
 
+  .about-text:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Skills */
   .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+  }
+
+  @media (max-width: 640px) {
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   .skill-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 15px;
-    background: white;
-    border-radius: var(--radius-sm);
+    padding: 12px;
     border: 1px solid var(--border);
-    transition: all 0.2s ease;
+    border-radius: 6px;
+    font-size: 14px;
+    background: var(--bg);
   }
 
   .skill-item:hover {
-    border-color: var(--primary-light);
-    background: rgba(102, 126, 234, 0.05);
+    border-color: var(--accent);
   }
 
-  .skill-icon {
-    color: var(--primary);
-    font-size: 18px;
-  }
-
+  /* Contacts */
   .contact-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    list-style: none;
   }
 
   .contact-item {
+    margin-bottom: 16px;
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 15px;
-    background: white;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--border);
-    text-decoration: none;
+    gap: 12px;
+  }
+
+  .contact-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .contact-label {
+    font-size: 14px;
+    color: var(--text-light);
+    min-width: 100px;
+  }
+
+  .contact-value {
     color: var(--text);
-    transition: all 0.2s ease;
+    text-decoration: none;
+    transition: color 0.2s;
   }
 
-  .contact-item:hover {
-    border-color: var(--primary);
-    transform: translateX(5px);
-    color: var(--primary-dark);
+  .contact-value:hover {
+    color: var(--accent);
   }
 
-  .contact-icon {
-    width: 40px;
-    height: 40px;
-    background: var(--bg);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary);
-    font-size: 18px;
-    flex-shrink: 0;
+  @media (max-width: 640px) {
+    .contact-item {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+    
+    .contact-label {
+      min-width: auto;
+    }
   }
 
-  .sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-  }
-
-  .badge {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-    color: white;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    margin-right: 8px;
-    margin-bottom: 8px;
-  }
-
-  .tool-grid {
+  /* Languages */
+  .languages-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 15px;
+    gap: 8px;
   }
 
-  .tool-badge {
-    background: var(--bg);
-    color: var(--text);
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 13px;
+  .language-tag {
+    padding: 6px 12px;
     border: 1px solid var(--border);
-    transition: all 0.2s ease;
-  }
-
-  .tool-badge:hover {
-    background: var(--primary);
-    color: white;
-    border-color: var(--primary);
-  }
-
-  .achievement-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    padding: 15px;
-    background: rgba(16, 185, 129, 0.05);
-    border-radius: var(--radius-sm);
-    margin-bottom: 12px;
-    border-left: 4px solid var(--accent);
-  }
-
-  .achievement-icon {
-    color: var(--accent);
-    font-size: 20px;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-
-  footer {
-    text-align: center;
-    padding: 25px;
-    color: var(--text-muted);
+    border-radius: 4px;
     font-size: 14px;
-    background: var(--card);
-    border-radius: var(--radius-md);
-    border: 1px solid var(--border);
+    color: var(--text);
   }
 
-  .cta-button {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    color: white;
-    padding: 14px 28px;
-    border-radius: var(--radius-md);
+  /* Experience */
+  .experience-item {
+    margin-bottom: 24px;
+  }
+
+  .experience-title {
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  .experience-desc {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.5;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-light);
+  }
+
+  /* Links */
+  a {
+    color: inherit;
     text-decoration: none;
-    font-weight: 600;
-    margin-top: 10px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
   }
 
-  .cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  a.email:hover {
+    color: var(--accent);
   }
 
-  .availability {
+  /* Status */
+  .status {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    background: rgba(16, 185, 129, 0.1);
-    color: var(--accent);
-    border-radius: 20px;
+    gap: 6px;
     font-size: 14px;
-    font-weight: 500;
-    margin-top: 15px;
+    color: var(--accent);
+    margin-top: 8px;
+    padding: 4px 8px;
+    background: rgba(37, 99, 235, 0.05);
+    border-radius: 4px;
   }
 
-  .availability::before {
-    content: "•";
-    color: var(--accent);
-    font-size: 20px;
+  .status::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
     animation: pulse 2s infinite;
   }
 
@@ -384,130 +251,97 @@
 </head>
 <body>
   <div class="container">
-    <div class="main-card">
-      <div class="header">
-        <div class="profile-section">
-          <div class="profile-photo-container">
-            <img src="me.jpg" alt="Фото Ани" class="profile-photo">
-            <div class="profile-badge">Junior QA</div>
-          </div>
-          <div class="profile-info">
-            <h1>Аня, 27 лет</h1>
-            <div class="title">Джун-тестировщик в поиске классной позиции</div>
-            <div class="location">📍 Москва (готова к переезду)</div>
-            <div class="availability">Готова к собеседованиям</div>
-          </div>
-        </div>
+    <!-- Header -->
+    <header class="header">
+      <h1 class="name">Аня</h1>
+      <div class="title">QA Engineer</div>
+      <div class="location">📍 Москва (готовa к переезду)</div>
+      <div class="status">Открыта к предложениям</div>
+    </header>
+
+    <!-- About -->
+    <section class="section">
+      <h2 class="section-title">Обо мне</h2>
+      <p class="about-text">
+        Более 6 лет работала автором и аналитиком контента. Развитое внимание к деталям, логическое мышление, умение находить несостыковки.
+      </p>
+      <p class="about-text">
+        Изучаю тестирование: составляю тест-планы, чек-листы, тест-кейсы, оформляю баг-репорты. Ищу команду для роста.
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section class="section">
+      <h2 class="section-title">Навыки</h2>
+      <div class="skills-grid">
+        <div class="skill-item">Тест-дизайн, чек-листы</div>
+        <div class="skill-item">Баг-репорты, тест-кейсы</div>
+        <div class="skill-item">Postman, DevTools</div>
+        <div class="skill-item">Charles, SoapUI</div>
+        <div class="skill-item">Jira, Yandex.Tracker</div>
+        <div class="skill-item">MySQL, MongoDB</div>
+        <div class="skill-item">Figma, Test-it</div>
+        <div class="skill-item">HTML, CSS</div>
       </div>
+    </section>
 
-      <div class="content-grid">
-        <main class="main-content">
-          <section class="section" id="about">
-            <h2>Обо мне</h2>
-            <p>Раньше 6+ лет работала автором и аналитиком контента — поэтому у меня очень развита логика, внимание к деталям и умение находить несостыковки. Люблю тщательно проверять ошибки, чтобы всё работало так, как должно.</p>
-            <p>Учусь тестированию, делаю тест-планы, чек-листы и тест-кейсы, оформляю баг-репорты. Хочу расти в классной продуктовой команде.</p>
-          </section>
-
-          <section class="section" id="skills">
-            <h2>Навыки и инструменты</h2>
-            <div class="skills-grid">
-              <div class="skill-item">
-                <span class="skill-icon">📋</span>
-                <span>Тест-дизайн, чек-листы</span>
-              </div>
-              <div class="skill-item">
-                <span class="skill-icon">🐛</span>
-                <span>Баг-репорты, тест-кейсы</span>
-              </div>
-              <div class="skill-item">
-                <span class="skill-icon">🔧</span>
-                <span>Postman, Devtools</span>
-              </div>
-              <div class="skill-item">
-                <span class="skill-icon">📊</span>
-                <span>Charles, Kibana, Grafana</span>
-              </div>
-              <div class="skill-item">
-                <span class="skill-icon">💾</span>
-                <span>MongoDB, MySQL</span>
-              </div>
-              <div class="skill-item">
-                <span class="skill-icon">🎨</span>
-                <span>Figma, Test-it</span>
-              </div>
-              <div class="skill-item">
-                <span class="skill-icon">📝</span>
-                <span>Jira, Yandex.Tracker</span>
-              </div>
-              <div class="skill-item">
-                <span class="skill-icon">🌐</span>
-                <span>HTML, CSS</span>
-              </div>
-            </div>
-          </section>
-
-          <section class="section" id="languages">
-            <h2>Языки</h2>
-            <div class="tool-grid">
-              <span class="badge">Русский — родной</span>
-              <span class="badge">English — C1</span>
-              <span class="badge">Farsi — средний</span>
-              <span class="badge">Turkish — средний</span>
-            </div>
-          </section>
-        </main>
-
-        <aside class="sidebar">
-          <section class="section" id="contacts">
-            <h2>Контакты</h2>
-            <div class="contact-list">
-              <a href="mailto:braveblackbirdy@gmail.com" class="contact-item">
-                <div class="contact-icon">📧</div>
-                <div>
-                  <div style="font-weight: 500;">Email</div>
-                  <div style="font-size: 14px; color: var(--text-light);">braveblackbirdy@gmail.com</div>
-                </div>
-              </a>
-              <a href="tel:+79267960720" class="contact-item">
-                <div class="contact-icon">📱</div>
-                <div>
-                  <div style="font-weight: 500;">Телефон</div>
-                  <div style="font-size: 14px; color: var(--text-light);">+7 (926) 796-07-20</div>
-                </div>
-              </a>
-              <a href="https://t.me/braveblackbirdy" target="_blank" class="contact-item">
-                <div class="contact-icon">✈️</div>
-                <div>
-                  <div style="font-weight: 500;">Telegram</div>
-                  <div style="font-size: 14px; color: var(--text-light);">@braveblackbirdy</div>
-                </div>
-              </a>
-            </div>
-            <a href="mailto:braveblackbirdy@gmail.com" class="cta-button">Написать мне</a>
-          </section>
-
-          <section class="section" id="achievements">
-            <h2>Достижения</h2>
-            <div class="achievement-item">
-              <div class="achievement-icon">🌍</div>
-              <div>Съездила на стажировку в Иран</div>
-            </div>
-            <div class="achievement-item">
-              <div class="achievement-icon">👥</div>
-              <div>Создала контент для курсов, которые прошли ~70 000 человек (#Sekta)</div>
-            </div>
-            <div class="achievement-item">
-              <div class="achievement-icon">💼</div>
-              <div>Собрала онлайн-сообщество из 800+ психологов для коворкинга</div>
-            </div>
-          </section>
-        </aside>
+    <!-- Languages -->
+    <section class="section">
+      <h2 class="section-title">Языки</h2>
+      <div class="languages-list">
+        <span class="language-tag">Русский — родной</span>
+        <span class="language-tag">English — C1</span>
+        <span class="language-tag">Farsi — средний</span>
+        <span class="language-tag">Turkish — средний</span>
       </div>
-    </div>
+    </section>
 
-    <footer>
-      <p>© 2024 Аня — джун-тестировщик</p>
-      <p style="margin-top: 5px; font-size: 13px;">Готова к собеседованиям и тестовым заданиям. Ищу команду мечты!</p>
+    <!-- Contacts -->
+    <section class="section">
+      <h2 class="section-title">Контакты</h2>
+      <ul class="contact-list">
+        <li class="contact-item">
+          <span class="contact-label">Email</span>
+          <a href="mailto:braveblackbirdy@gmail.com" class="contact-value email">
+            braveblackbirdy@gmail.com
+          </a>
+        </li>
+        <li class="contact-item">
+          <span class="contact-label">Телефон</span>
+          <a href="tel:+79267960720" class="contact-value">
+            +7 (926) 796-07-20
+          </a>
+        </li>
+        <li class="contact-item">
+          <span class="contact-label">Telegram</span>
+          <a href="https://t.me/braveblackbirdy" target="_blank" class="contact-value">
+            @braveblackbirdy
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Experience -->
+    <section class="section">
+      <h2 class="section-title">Когда-то</h2>
+      <div class="experience-item">
+        <div class="experience-title">Съездила на стажировку в Иран</div>
+        <div class="experience-desc">Международный опыт работы и кросс-культурная коммуникация</div>
+      </div>
+      <div class="experience-item">
+        <div class="experience-title">Контент для #Sekta</div>
+        <div class="experience-desc">Материалы курсов прошли ~70 000 человек</div>
+      </div>
+      <div class="experience-item">
+        <div class="experience-title">Сообщество психологов</div>
+        <div class="experience-desc">Собрала онлайн-сообщество из 800+ специалистов для коворкинга</div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div>© 2026 Аня — QA Engineer</div>
+      <div style="margin-top: 4px; font-size: 13px;">Готова к собеседованиям и тестовым заданиям</div>
     </footer>
   </div>
 </body>
